@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Ansa Tariq — Social Media Manager & Content Strategist">
+
+  <title>Ansa Tariq — Social Media Manager</title>
+
+  <link rel="icon" type="image/png" href="media/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+
+    /* =========================================================
+       ROOT VARIABLES
+    ========================================================= */
+
+    :root {
+      --bg: #0b0d0f;
+      --surface: #12161a;
+      --surface2: #171c21;
+
+      --text: #f3f1eb;
+      --muted: #9ba1a6;
+
+      --line: rgba(255, 255, 255, .10);
+
+      --accent: #d8ff55;
+      --accent2: #b9db3f;
+
+      --dark: #0b0d0f;
+
+      --max: 1200px;
+
+      --shadow: 0 30px 80px rgba(0, 0, 0, .35);
+
+      --ease: cubic-bezier(.2, .8, .2, 1);
+    }
+
+
+    /* =========================================================
+       LIGHT THEME
+    ========================================================= */
+
+    body.light {
+      --bg: #f5f3ee;
+      --surface: #ffffff;
+      --surface2: #ebe9e2;
+
+      --text: #121416;
+      --muted: #686d70;
+
+      --line: rgba(18, 20, 22, .11);
+
+      --accent: #6e8e00;
+      --accent2: #5d7900;
+
+      --dark: #ffffff;
+
+      --shadow: 0 24px 65px rgba(30, 32, 27, .12);
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+
+      transition: background .4s, color .4s;
+
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 30px;
+
+      margin-bottom: 45px;
+    }
+
+    .section-num {
+      color: var(--accent);
+
+      font: 800 .72rem "Manrope";
+
+      letter-spacing: .15em;
+
+      margin-bottom: 12px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope";
+
+      letter-spacing: -.055em;
+      line-height: .96;
+    }
+
+    h2 {
+      font-size: clamp(3rem, 6vw, 5.8rem);
+    }
+
+    .intro {
+      max-width: 440px;
+
+      color: var(--muted);
+
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       TOP BAR
+    ========================================================= */
+
+    .top {
+      border-bottom: 1px solid var(--line);
+
+      font-size: .78rem;
+
+      color: var(--muted);
+
+      padding: 9px 0;
+
+      letter-spacing: .02em;
+    }
+
+    .top .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 15px;
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .nav {
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      background: color-mix(in srgb,
+          var(--bg) 82%,
+          transparent);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navin {
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .logo {
+      font: 800 1.05rem "Manrope";
+
+      letter-spacing: -.04em;
+
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--text);
+    }
+
+    .logo i {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .links {
+      display: flex;
+
+      gap: 30px;
+
+      align-items: center;
+    }
+
+    .links a {
+      font-size: .82rem;
+
+      color: var(--muted);
+
+      font-weight: 700;
+
+      transition: .25s;
+    }
+
+    .links a:hover {
+      color: var(--text);
+    }
+
+    .actions {
+      display: flex;
+
+      gap: 8px;
+
+      flex-shrink: 0;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--line);
+
+      background: transparent;
+
+      color: var(--text);
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      display: grid;
+      place-items: center;
+
+      transition: .25s;
+    }
+
+    .icon:hover {
+      border-color: var(--accent);
+
+      transform: translateY(-2px);
+    }
+
+    .menu {
+      display: none;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+      min-height: 48px;
+
+      padding: 0 20px;
+
+      border-radius: 8px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      font-size: .82rem;
+
+      font-weight: 800;
+
+      border: 1px solid var(--line);
+
+      transition: .3s var(--ease);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+
+      border-color: var(--accent);
+
+      color: #10130b;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow: 0 12px 35px rgba(216, 255, 85, .15);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--accent);
+
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      padding: 95px 0 105px;
+
+      position: relative;
+    }
+
+    .hero:before {
+      content: "";
+
+      position: absolute;
+
+      width: 620px;
+      height: 620px;
+
+      border-radius: 50%;
+
+      right: -300px;
+      top: -170px;
+
+      background:
+        radial-gradient(circle,
+          rgba(216, 255, 85, .13),
+          transparent 67%);
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr;
+
+      gap: 75px;
+
+      align-items: start;
+    }
+
+    .kicker {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--accent);
+
+      font-size: .72rem;
+
+      text-transform: uppercase;
+
+      font-weight: 800;
+
+      letter-spacing: .16em;
+
+      margin-bottom: 24px;
+    }
+
+    .kicker:before {
+      content: "";
+
+      width: 30px;
+      height: 1px;
+
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(4.3rem, 9.5vw, 9.2rem);
+
+      margin: 0;
+
+      max-width: 900px;
+
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+
+      color: var(--muted);
+
+      max-width: 650px;
+
+      margin: 30px 0 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 32px;
+    }
+
+    .hero-side {
+      border-left: 1px solid var(--line);
+
+      padding-left: 30px;
+    }
+
+
+    /* =========================================================
+       HERO IMAGE
+    ========================================================= */
+
+    .hero-image {
+      width: 100%;
+      max-width: 390px;
+
+      height: 430px;
+
+      object-fit: cover;
+
+      border-radius: 14px;
+
+      border: 1px solid var(--line);
+
+      background: var(--surface);
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 25px;
+
+      transition:
+        transform .45s var(--ease),
+        border-color .3s ease;
+    }
+
+    .hero-image:hover {
+      transform: translateY(-7px);
+
+      border-color: var(--accent);
+    }
+
+    .hero-side p {
+      font-size: .86rem;
+
+      color: var(--muted);
+
+      margin: 0 0 20px;
+    }
+
+    .availability {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      font-size: .74rem;
+
+      font-weight: 800;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+      box-shadow:
+        0 0 0 5px rgba(216, 255, 85, .08);
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      display: grid;
+
+      grid-template-columns: .8fr 1.2fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .photo-frame {
+      position: relative;
+    }
+
+    .photo-frame:after {
+      content: "";
+
+      position: absolute;
+
+      inset: 14px -14px -14px 14px;
+
+      border: 1px solid var(--accent);
+
+      z-index: -1;
+
+      border-radius: 4px;
+    }
+
+    .photo {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      filter: grayscale(.25);
+
+      border-radius: 4px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+
+      font-size: 1rem;
+
+      margin-top: 18px;
+    }
+
+    .about-copy p:first-of-type {
+      font-size: 1.15rem;
+
+      color: var(--text);
+    }
+
+    .facts {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 0;
+
+      border-top: 1px solid var(--line);
+
+      margin-top: 30px;
+    }
+
+    .fact {
+      padding: 18px 15px 18px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact b {
+      display: block;
+
+      color: var(--text);
+
+      font: 700 1rem "Manrope";
+    }
+
+    .fact span {
+      color: var(--muted);
+
+      font-size: .78rem;
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--surface);
+
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      padding: 30px;
+
+      transition: .4s var(--ease);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+
+      border-color:
+        color-mix(in srgb,
+          var(--accent) 50%,
+          transparent);
+
+      box-shadow: var(--shadow);
+    }
+
+    .service-no {
+      color: var(--accent);
+
+      font: 800 .72rem "Manrope";
+    }
+
+    .card h3 {
+      font-size: 1.65rem;
+
+      margin: 42px 0 13px;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: .9rem;
+
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       CASE STUDIES
+    ========================================================= */
+
+    .work {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      background: var(--surface);
+
+      transition: .4s var(--ease);
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+    .project:hover {
+      transform: translateY(-7px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .project-art {
+      height: 360px;
+
+      background: #20252a;
+
+      position: relative;
+
+      overflow: hidden;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform .5s var(--ease);
+    }
+
+    .project:hover .project-image {
+      transform: scale(1.05);
+    }
+
+    .project:nth-child(2) .project-art {
+      background: #dce6c4;
+    }
+
+    .project:nth-child(3) .project-art {
+      background: #25242a;
+    }
+
+    .project:nth-child(4) .project-art {
+      background: #c7b9a6;
+    }
+
+    .project-info {
+      padding: 23px 25px 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+    }
+
+    .project-meta {
+      font-size: .7rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .12em;
+
+      color: var(--accent);
+
+      font-weight: 800;
+    }
+
+    .project-info h3 {
+      font-size: 1.7rem;
+
+      margin: 9px 0 7px;
+    }
+
+    .project-info p {
+      margin: 0 0 17px;
+
+      color: var(--muted);
+
+      font-size: .85rem;
+
+      flex: 1;
+    }
+
+    .arrow {
+      font-size: .8rem;
+
+      font-weight: 800;
+
+      color: var(--text);
+    }
+
+    .arrow:hover {
+      color: var(--accent);
+    }
+
+    .center {
+      text-align: center;
+
+      margin-top: 28px;
+    }
+
+
+    /* =========================================================
+       POSTS / SOCIAL MEDIA DESIGNS
+    ========================================================= */
+
+    .posts {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .post {
+      aspect-ratio: 1;
+
+      background: var(--surface);
+
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      position: relative;
+
+      transition: .35s var(--ease);
+    }
+
+    .post:hover {
+      transform: translateY(-7px) rotate(-1deg);
+
+      border-color: var(--accent);
+
+      box-shadow: var(--shadow);
+    }
+
+    .post img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition: transform .5s var(--ease);
+    }
+
+    .post:hover img {
+      transform: scale(1.05);
+    }
+
+    .post-label {
+      position: absolute;
+
+      left: 14px;
+      bottom: 14px;
+
+      padding: 7px 11px;
+
+      border-radius: 6px;
+
+      background: rgba(0, 0, 0, .68);
+
+      color: #fff;
+
+      font-size: .65rem;
+
+      font-weight: 800;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+      backdrop-filter: blur(8px);
+    }
+
+
+    /* =========================================================
+       REVIEWS
+    ========================================================= */
+
+    .reviews {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 12px;
+    }
+
+    .review {
+      background: var(--surface);
+
+      border: 1px solid var(--line);
+
+      border-radius: 12px;
+
+      padding: 30px;
+    }
+
+    .stars {
+      color: var(--accent);
+
+      letter-spacing: .12em;
+    }
+
+    blockquote {
+      font-size: 1rem;
+
+      margin: 22px 0;
+
+      color: var(--text);
+    }
+
+    cite {
+      font-size: .76rem;
+
+      color: var(--muted);
+
+      font-style: normal;
+    }
+
+
+    /* =========================================================
+       WHY WORK WITH ME
+    ========================================================= */
+
+    .why {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .why .card {
+      min-height: 190px;
+    }
+
+    .why b {
+      font: 800 1.05rem "Manrope";
+    }
+
+    .why p {
+      margin-top: 10px;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      background: var(--accent);
+
+      color: #10130b;
+
+      border-radius: 16px;
+
+      padding: 65px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .contact:after {
+      content: "01";
+
+      position: absolute;
+
+      right: -30px;
+      bottom: -80px;
+
+      font: 800 17rem/1 "Manrope";
+
+      color: rgba(16, 19, 11, .08);
+
+      letter-spacing: -.1em;
+    }
+
+    .contact .section-num {
+      color: #10130b;
+    }
+
+    .contact h2 {
+      max-width: 850px;
+    }
+
+    .contact p {
+      max-width: 600px;
+
+      color: #313b16;
+
+      margin: 20px 0 28px;
+    }
+
+    .contact .btn.primary {
+      background: #10130b;
+
+      color: #fff;
+
+      border-color: #10130b;
+    }
+
+    .contact .btn.secondary {
+      border-color: rgba(16, 19, 11, .3);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 30px 0 45px;
+
+      border-top: 1px solid var(--line);
+
+      font-size: .75rem;
+
+      color: var(--muted);
+    }
+
+    .foot {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(24px);
+
+      transition:
+        opacity .8s var(--ease),
+        transform .8s var(--ease);
+    }
+
+    .reveal.show {
+      opacity: 1;
+
+      transform: none;
+    }
+
+    .d1 {
+      transition-delay: .08s;
+    }
+
+    .d2 {
+      transition-delay: .16s;
+    }
+
+    .d3 {
+      transition-delay: .24s;
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .links {
+        position: absolute;
+
+        left: 20px;
+        right: 20px;
+
+        top: 72px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background: var(--surface);
+
+        padding: 18px;
+
+        border: 1px solid var(--line);
+
+        border-radius: 12px;
+
+        box-shadow: var(--shadow);
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .links a {
+        padding: 10px 5px;
+      }
+
+      .menu {
+        display: grid;
+      }
+
+      .hero-grid,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+
+        border-top: 1px solid var(--line);
+
+        padding: 25px 0 0;
+      }
+
+      .hero-image {
+        max-width: 500px;
+
+        height: 430px;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .posts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        gap: 50px;
+      }
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .top {
+        font-size: .68rem;
+      }
+
+      .top .row {
+        gap: 10px;
+      }
+
+      .navin {
+        min-height: 68px;
+      }
+
+      .links {
+        top: 68px;
+
+        left: 14px;
+        right: 14px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      h1 {
+        font-size: clamp(3.5rem, 17vw, 4.5rem);
+
+        line-height: .92;
+      }
+
+      .hero-sub {
+        font-size: .98rem;
+
+        margin-top: 24px;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-image {
+        width: 100%;
+
+        max-width: none;
+
+        height: 390px;
+
+        border-radius: 12px;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .section-head {
+        display: block;
+
+        margin-bottom: 32px;
+      }
+
+      .intro {
+        margin-top: 20px;
+      }
+
+      h2 {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+      }
+
+      .about {
+        gap: 45px;
+      }
+
+      .photo-frame {
+        margin: 0 14px 14px 0;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .work,
+      .posts,
+      .why {
+        grid-template-columns: 1fr;
+      }
+
+      .project-art {
+        height: 300px;
+      }
+
+      .project-info {
+        padding: 22px;
+      }
+
+      .project-info h3 {
+        font-size: 1.5rem;
+      }
+
+      .post {
+        aspect-ratio: 1;
+
+        min-height: 0;
+      }
+
+      .review {
+        padding: 24px;
+      }
+
+      .contact {
+        padding: 38px 25px;
+      }
+
+      .contact h2 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+      }
+
+      .contact .hero-buttons {
+        position: relative;
+
+        z-index: 2;
+      }
+
+      .foot {
+        flex-direction: column;
+
+        gap: 8px;
+      }
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 400px) {
+
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .logo {
+        font-size: .95rem;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 3.4rem;
+      }
+
+      .kicker {
+        font-size: .63rem;
+
+        letter-spacing: .12em;
+      }
+
+      .hero-image {
+        height: 330px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .project-art {
+        height: 270px;
+      }
+
+      .project-info {
+        padding: 20px;
+      }
+
+      .post {
+        min-height: 250px;
+      }
+
+      .contact {
+        padding: 32px 20px;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      * {
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+      }
+    }
+
+    
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       TOP BAR
+  ========================================================= -->
+
+  <div class="top">
+
+    <div class="container row">
+
+      <a href="mailto:socialbyansa@gmail.com">
+        socialbyansa@gmail.com
+      </a>
+
+      <a href="https://instagram.com/socialbyansa"
+         target="_blank"
+         rel="noopener">
+        @socialbyansa
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================= -->
+
+  <header class="nav">
+
+    <nav class="container navin">
+
+      <a class="logo" href="#home">
+        ansa<span>tariq</span><i>.</i>
+      </a>
+
+
+      <div class="links" id="links">
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#work">Case Studies</a>
+
+        <a href="#posts">Posts</a>
+
+        <a href="#reviews">Reviews</a>
+
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <div class="actions">
+
+        <button class="icon"
+                id="theme"
+                aria-label="Toggle theme">
+          ◐
+        </button>
+
+        <button class="icon menu"
+                id="menu"
+                aria-label="Open menu">
+          ☰
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main id="home">
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <div class="kicker">
+            Social media manager · content strategist
+          </div>
+
+          <h1>
+            Content that<br>
+            <span>moves</span> brands.
+          </h1>
+
+          <p class="hero-sub">
+            I'm Ansa Tariq — a social media manager helping small
+            businesses grow through strategic content, not just
+            pretty graphics.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a class="btn primary" href="#work">
+              View selected work ↗
+            </a>
+
+            <a class="btn secondary"
+               href="mailto:socialbyansa@gmail.com">
+              Start a conversation
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-side reveal d2">
+
+          <img
+            class="hero-image"
+            src="media/hero.webp"
+            alt="Ansa Tariq — Social Media Manager"
+          >
+
+          <div class="availability">
+
+            <span class="dot"></span>
+
+            Available for selected projects
+
+          </div>
+
+          <p style="margin-top:25px">
+            Purposeful content that builds brand presence,
+            increases engagement and supports real business growth.
+          </p>
+
+          <a class="arrow" href="#about">
+            Get to know me ↓
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================= -->
+
+    <section class="section" id="about">
+
+      <div class="container about">
+
+        <div class="photo-frame reveal">
+
+          <img
+            class="photo"
+            src="media/intro.jpg"
+            alt="Ansa Tariq portfolio image"
+          >
+
+        </div>
+
+
+        <div class="about-copy reveal d1">
+
+          <div class="section-num">
+            01 / About me
+          </div>
+
+          <h2>
+            More than<br>
+            pretty posts.
+          </h2>
+
+          <p>
+            I am Ansa Tariq, a passionate social media manager
+            who helps small businesses grow through strategic
+            content, not just pretty graphics.
+          </p>
+
+          <p>
+            I create purposeful content that builds a brand's
+            presence, increases engagement and supports business
+            growth. I recently graduated from university and I'm
+            continuously learning new skills every day to stay
+            sharp, creative and effective in a fast-changing
+            digital world.
+          </p>
+
+
+          <div class="facts">
+
+            <div class="fact">
+              <b>Content strategy</b>
+              <span>Ideas with a clear purpose</span>
+            </div>
+
+            <div class="fact">
+              <b>Creative direction</b>
+              <span>Visuals that feel intentional</span>
+            </div>
+
+            <div class="fact">
+              <b>Small business focus</b>
+              <span>Practical, useful systems</span>
+            </div>
+
+            <div class="fact">
+              <b>Always learning</b>
+              <span>Keeping up with digital change</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SERVICES
+    ========================================================= -->
+
+    <section class="section" id="services">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-num">
+              02 / Services
+            </div>
+
+            <h2>
+              What I can<br>
+              do for you.
+            </h2>
+
+          </div>
+
+          <!-- <p class="intro">
+            A focused set of services for brands that want
+            their social presence to feel clear, consistent
+            and considered.
+          </p> -->
+
+        </div>
+
+
+        <div class="services">
+
+          <article class="card reveal">
+
+            <span class="service-no">01</span>
+
+            <h3>
+              Social Media Management
+            </h3>
+
+            <p>
+              Planning, scheduling and maintaining a consistent
+              presence across your social channels.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d1">
+
+            <span class="service-no">02</span>
+
+            <h3>
+              Content Strategy
+            </h3>
+
+            <p>
+              Content pillars, ideas and direction built around
+              your audience, brand and business goals.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d2">
+
+            <span class="service-no">03</span>
+
+            <h3>
+              Content Creation
+            </h3>
+
+            <p>
+              Carousels, posts, campaign concepts and visual
+              content designed to communicate clearly.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <span class="service-no">04</span>
+
+            <h3>
+              Copywriting
+            </h3>
+
+            <p>
+              Natural, on-brand captions and messaging that
+              make content easier to understand and act on.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d1">
+
+            <span class="service-no">05</span>
+
+            <h3>
+              Content Calendar
+            </h3>
+
+            <p>
+              A practical content system that turns ideas into
+              an organised and sustainable posting routine.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d2">
+
+            <span class="service-no">06</span>
+
+            <h3>
+              Brand Presence
+            </h3>
+
+            <p>
+              Creating consistency across visual direction,
+              tone and repeatable content formats.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CASE STUDIES
+    ========================================================= -->
+
+    <section class="section" id="work">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-num">
+              03 / Selected work
+            </div>
+
+            <h2>
+              Case studies.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="work">
+
+
+          <!-- CASE STUDY 01 -->
+
+          <article class="project reveal">
+
+            <div class="project-art">
+
+              <img
+                class="project-image"
+                src="media/111.png"
+                alt="Social media case study demo"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                Case Study · 1
+              </div>
+
+              <h3>
+                khudmukhtaar.pk
+              </h3>
+
+              <p>
+                The Instagram brand helping women turn ambition
+                into actions.
+              </p>
+
+              <a
+                class="arrow"
+                href="https://www.instagram.com/p/DbGbdN4DMxN/"
+                target="_blank"
+                rel="noopener"
+              >
+                View case study ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- CASE STUDY 02 -->
+
+          <article class="project reveal d1">
+
+            <div class="project-art">
+
+              <img
+                class="project-image"
+                src="media/crumble1.jpg"
+                alt="Social media campaign demo"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                Case Study · 2
+              </div>
+
+              <h3>
+                How a brand Crumbe built a cult following
+                without constantly selling.
+              </h3>
+
+              <p>
+                Case study of One of Pakistan's Most Viral
+                Dessert Brand.
+              </p>
+
+              <a
+                class="arrow"
+                href="https://www.instagram.com/p/DbTC687DInw/"
+                target="_blank"
+                rel="noopener"
+              >
+                View case study ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- CASE STUDY 03 -->
+
+          <article class="project reveal">
+
+            <div class="project-art">
+
+              <img
+                class="project-image"
+                src="media/cae.webp"
+                alt="Educational content case study demo"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                Case Study · 3
+              </div>
+
+              <h3>
+                Another Hijabi
+              </h3>
+
+              <p>
+                How "Another Hijabi" Built One of Pakistan's
+                Most Trusted Personal Brands Without Showing Her Face.
+              </p>
+
+              <a
+                class="arrow"
+                href="https://www.instagram.com/p/Dbk-gouiFrY/"
+                target="_blank"
+                rel="noopener"
+              >
+                View case study ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- CASE STUDY 04 -->
+
+          <article class="project reveal d1">
+
+            <div class="project-art">
+
+              <img
+                class="project-image"
+                src="media/help.png"
+                alt="Social media feed refresh demo"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div class="project-meta">
+                Case Study · 4
+              </div>
+
+              <h3>
+                Abdullah Tariq
+              </h3>
+
+              <p>
+                How Abdullah Tariq is helping an entire
+                generation fight modern fitnah.
+              </p>
+
+              <a
+                class="arrow"
+                href="https://www.instagram.com/p/DbvbIGbDCLm/"
+                target="_blank"
+                rel="noopener"
+              >
+                View case study ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="center reveal">
+
+          <a
+            class="btn secondary"
+            href="https://www.instagram.com/socialbyansa/"
+            target="_blank"
+            rel="noopener"
+          >
+            View more case studies ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         POSTS I DESIGNED
+    ========================================================= -->
+
+    <section class="section" id="posts">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-num">
+              04 / Content samples
+            </div>
+
+            <h2>
+              Posts I designed.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="posts">
+
+
+          <!-- POST 01 -->
+
+          <article class="post reveal">
+
+            <img
+              src="media/post.png"
+              alt="Social media design by Ansa Tariq"
+              loading="lazy"
+            >
+
+            
+
+          </article>
+
+
+
+          <!-- POST 02 -->
+
+          <article class="post reveal d1">
+
+            <img
+              src="media/post2.png"
+              alt="Social media design by Ansa Tariq"
+              loading="lazy"
+            >
+
+        
+
+          </article>
+
+
+
+          <!-- POST 03 -->
+
+          <article class="post reveal d2">
+
+            <img
+              src="media/post3.png"
+              alt="Social media design by Ansa Tariq"
+              loading="lazy"
+            >
+
+           
+
+          </article>
+
+
+
+          <!-- POST 04 -->
+
+          <article class="post reveal d3">
+
+            <img
+              src="media/post4.png"
+              alt="Social media design by Ansa Tariq"
+              loading="lazy"
+            >
+
+          
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         REVIEWS
+    ========================================================= -->
+
+    <section class="section" id="reviews">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-num">
+              05 / Kind words
+            </div>
+
+            <h2>
+              Reviews.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="reviews">
+
+          <article class="review reveal">
+
+            <blockquote>
+              “uhhh, i can definitely learn a thing or two from here.
+              amazing job”
+            </blockquote>
+
+            <cite>
+              — @jawadahmadsocial
+            </cite>
+
+          </article>
+
+
+          <article class="review reveal d1">
+
+            <blockquote>
+              “girll i just LOVEE the way you explained each n everything
+              KEEP GROWING ❤️”
+            </blockquote>
+
+            <cite>
+              — @smmwithayesha
+            </cite>
+
+          </article>
+
+
+          <article class="review reveal d2">
+
+            <blockquote>
+              “Loved this case study! The point about having a clear
+              perspective instead of simply following trends really
+              stood out to me. Such a good example of how strategy +
+              personal branding can create a recognizable brand.”
+            </blockquote>
+
+            <cite>
+              — @raabia.socials
+            </cite>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         WHY WORK WITH ME
+    ========================================================= -->
+
+    <section class="section" id="why">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-num">
+              06 / Why me
+            </div>
+
+            <h2>
+              Why work<br>
+              with me?
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="why">
+
+          <article class="card reveal">
+
+            <b>
+              01 — Strategy before aesthetics
+            </b>
+
+            <p>
+              I start with what the content needs to achieve,
+              then build the visual around the message.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d1">
+
+            <b>
+              02 — Small-business friendly
+            </b>
+
+            <p>
+              Practical ideas that are realistic to create,
+              maintain and grow without unnecessary complexity.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <b>
+              03 — Content that sounds human
+            </b>
+
+            <p>
+              No copy-paste corporate voice. The goal is clear,
+              natural communication that fits your brand.
+            </p>
+
+          </article>
+
+
+          <article class="card reveal d1">
+
+            <b>
+              04 — Always learning
+            </b>
+
+            <p>
+              Social changes quickly, so I keep learning,
+              testing and refining the way content is planned
+              and presented.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================= -->
+
+    <section class="section" id="contact">
+
+      <div class="container">
+
+        <div class="contact reveal">
+
+          <div class="section-num">
+            07 / Let's create
+          </div>
+
+          <h2>
+            Ready to make your social presence work harder?
+          </h2>
+
+          <p>
+            Tell me what you're working on, what you need help
+            with and where you want your content to go. Let's turn
+            it into something clear, consistent and genuinely yours.
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a
+              class="btn primary"
+              href="mailto:socialbyansa@gmail.com"
+            >
+              Email me ↗
+            </a>
+
+            <a
+              class="btn secondary"
+              href="https://instagram.com/socialbyansa"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer>
+
+    <div class="container foot">
+
+      <span>
+        © <span id="year"></span>
+        Ansa Tariq / socialbyansa
+      </span>
+
+      <span>
+        Social media manager · Content strategist
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
+
+  <script>
+
+    /* Theme */
+
+    const body = document.body;
+    const theme = document.getElementById("theme");
+
+    if (
+      localStorage.getItem("ansa-theme") === "light"
+    ) {
+      body.classList.add("light");
+    }
+
+    theme.onclick = () => {
+
+      body.classList.toggle("light");
+
+      localStorage.setItem(
+        "ansa-theme",
+        body.classList.contains("light")
+          ? "light"
+          : "dark"
+      );
+
+    };
+
+
+    /* Mobile Menu */
+
+    const menu = document.getElementById("menu");
+    const links = document.getElementById("links");
+
+    menu.onclick = () => {
+
+      links.classList.toggle("open");
+
+      menu.textContent =
+        links.classList.contains("open")
+          ? "×"
+          : "☰";
+
+    };
+
+
+    /* Close mobile menu */
+
+    document
+      .querySelectorAll(".links a")
+      .forEach(link => {
+
+        link.onclick = () => {
+
+          links.classList.remove("open");
+
+          menu.textContent = "☰";
+
+        };
+
+      });
+
+
+    /* Scroll Reveal */
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: .12
+      }
+    );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+
+    /* Current Year */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+
+</html>

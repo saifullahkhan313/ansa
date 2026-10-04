@@ -1,0 +1,107 @@
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.instagram-post {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .4s var(--ease);
+}
+
+.instagram-post:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.ig-header {
+  min-height: 62px;
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ig-header > span {
+  margin-left: auto;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ig-avatar {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--accent);
+  color: #10130b;
+
+  font: 800 .85rem "Manrope";
+}
+
+.ig-header strong {
+  display: block;
+  font-size: .78rem;
+}
+
+.ig-header small {
+  display: block;
+  color: var(--muted);
+  font-size: .65rem;
+}
+
+.ig-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.ig-actions {
+  padding: 13px 15px 5px;
+
+  display: flex;
+  gap: 14px;
+
+  font-size: 1.15rem;
+}
+
+.ig-actions span {
+  margin-left: auto;
+}
+
+.ig-content {
+  padding: 4px 15px 18px;
+}
+
+.ig-content strong {
+  font-size: .78rem;
+}
+
+.ig-content p {
+  margin: 4px 0 0;
+
+  color: var(--muted);
+
+  font-size: .78rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  .posts {
+    grid-template-columns: 1fr;
+  }
+
+}
